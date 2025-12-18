@@ -1,6 +1,8 @@
 const body = document.querySelector("body")
 const moodBtn = document.querySelector(".mood");
-const headerbg = document.querySelector(".header")
+const headerbg = document.querySelector(".header");
+
+
 
 let color = "light"
 
@@ -31,3 +33,43 @@ moodBtn.addEventListener("click", () => {
 })
 
 
+
+
+const containers = document.querySelectorAll(".container");
+
+
+
+
+const allbtn = document.querySelector("#all");
+
+function showall() {
+    containers.forEach(el => {
+        el.style.display = "block"
+    })
+}
+
+allbtn.addEventListener("click", () => {
+    showall()
+})
+
+
+const activated = document.querySelector("#activated");
+
+
+
+
+function showactivated() {
+    containers.forEach(container => {
+        const chechbox = container.querySelector(".checkbox");
+        if (chechbox.checked) {
+            container.style.display = "block"
+            console.log("entered")
+        } else {
+            container.style.display = "none"
+        }
+    })
+}
+
+activated.addEventListener("click", () => {
+    showactivated()
+})
